@@ -1,16 +1,12 @@
-name: comment ops
+name: PR comments ops
 
 on: 
   pull_request_review_comment:
     types: [created]
 jobs:
   build:
+    name: PR comment handler
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - uses: ./.github/actions/handle-pr-comment
