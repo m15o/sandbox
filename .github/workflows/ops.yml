@@ -1,12 +1,38 @@
 name: PR comments ops
 
-on: 
+on:
   issue_comment:
-    types: [created, edited]
+    types: created
+
 jobs:
-  build:
-    name: PR comment handler
+  merge-and-release:
+    name: Merge and release a pull request
     runs-on: ubuntu-latest
+    if: github.event.issue.state == 'open' && startsWith(github.event.comment.body, '/')
     steps:
-    - uses: actions/checkout@v1
-    - uses: ./.github/actions/handle-pr-comment
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Cache go/pkg/mod
+      uses: actions/cache@v1
+      with:
+        path: ~/go/pkg/mod
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-go-
+
+    - uses: actions/setup-go@v1
+      with:
+        go-version: '1.13.7'
+
+    - name: Merge and release a pull request
+      env:
+        REPOSITORY_OWNER: ${{ github.event.repository.owner.login  }}
+        REPOSITORY_NAME: ${{ github.event.repository.name  }}
+        ISSUE_COMMENT_BODY: ${{ github.event.comment.body }}
+        ISSUE_COMMENT_USER: ${{ github.event.comment.user.login }}
+        ISSUE_NUMBER: ${{ github.event.issue.number }}
+        ISSUE_COMMENTS_URL: ${{ github.event.issue.comments_url }}
+      run: |
+        go run hello.go
+        
