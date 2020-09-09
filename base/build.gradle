@@ -4,5 +4,5 @@ plugins {
 
 subprojects {
     ext.awsSdkJavaV1Bom = "com.amazonaws:aws-java-sdk-bom:1.11.791"
-    ext.awsSdkJavaV2Version = "2.13.25"
+    ext.awsSdkJavaV2Version = "2.14.9"
 }
