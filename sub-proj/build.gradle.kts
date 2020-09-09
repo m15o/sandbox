@@ -25,7 +25,8 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
 
     implementation(platform(awsSdkJavaV1Bom))
-    implementation(platform(Dep.awsSdkJavaV2Bom))
+    implementation(platform("software.amazon.awssdk:bom:${Dep.awsSdkJavaV2Version}"))
+    implementation(platform(Dep.jacksonBom))
 
     implementation("software.amazon.awssdk:sts")
     implementation("com.amazonaws:aws-java-sdk-sts")
