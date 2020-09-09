@@ -3,6 +3,6 @@
     "config:base"
   ],
   "gradle": {
-    "fileMatch": ["base/build\\.gradle(\\.kts)?$"]
+    "fileMatch": ["base/build\\.gradle(\\.kts)?$", "base/buildSrc/src/main/kotlin/Dep.kt$"]
   }
 }
