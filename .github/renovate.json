@@ -5,10 +5,10 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "^debian.yaml$"
+        "^debian\\.yaml$"
       ],
       "matchStrings": [
-        "base-image:\\s*(?<currentValue>.*?)\n"
+        "tag: (?<currentValue>.*?)\n"
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "debian",
