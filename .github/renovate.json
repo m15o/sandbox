@@ -13,6 +13,13 @@
       "datasourceTemplate": "docker",
       "depNameTemplate": "debian",
       "versioningTemplate": "docker"
+    },
+    {
+      "fileMatch": ["^image\\.yaml$"],
+      "matchStrings": [
+        "image: (?<depName>.*?):(?<currentValue>.*?)"
+      ],
+      "datasourceTemplate": "docker"
     }
   ]
 }
