@@ -17,7 +17,7 @@
     {
       "fileMatch": ["^image\\.yaml$"],
       "matchStrings": [
-        "image: (?<depName>.*?):(?<currentValue>.*?)"
+        "image: (?<depName>.+):(?<currentValue>.+)"
       ],
       "datasourceTemplate": "docker"
     }
