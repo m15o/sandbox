@@ -3,6 +3,6 @@ plugins {
 }
 
 subprojects {
-    ext.awsSdkJavaV1Bom = "com.amazonaws:aws-java-sdk-bom:1.11.865"
+    ext.awsSdkJavaV1Bom = "com.amazonaws:aws-java-sdk-bom:1.11.875"
     ext.okHttpVersion = "com.squareup.okhttp3:okhttp-bom:${Dep.okHttpVersion}"
 }
