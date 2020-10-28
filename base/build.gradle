@@ -1,8 +1,0 @@
-plugins {
-    id("org.springframework.boot") version "2.3.3.RELEASE" apply false
-}
-
-subprojects {
-    ext.awsSdkJavaV1Bom = "com.amazonaws:aws-java-sdk-bom:1.11.865"
-    ext.okHttpVersion = "com.squareup.okhttp3:okhttp-bom:${Dep.okHttpVersion}"
-}
