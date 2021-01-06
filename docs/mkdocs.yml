@@ -1,0 +1,24 @@
+site_name: sandbox
+site_url: https://sandbox.m15.com/
+repo_url: https://github.com/m15o/sandbox
+repo_name: GitHub
+theme:
+  name: 'material'
+  language: 'ja'
+dev_addr: localhost:8000
+docs_dir: resources
+edit_uri: edit/master/docs/resources
+markdown_extensions:
+  - attr_list
+  - codehilite
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - pymdownx.tabbed
+  - pymdownx.magiclink
+  - toc:
+      permalink: True
+extra:
+  palette:
+    primary: 'Blue'
+    accent: 'Purple'
